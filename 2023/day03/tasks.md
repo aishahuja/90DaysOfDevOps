@@ -16,3 +16,22 @@ Task: What is the linux command to
 
 
 Reference: https://www.linkedin.com/pulse/linux-commands-devops-used-day-to-day-activit-chetan-/
+
+-----------------------Additions (17/Jul/23) ------------------------------
+1. To view what's written in a file.
+       cat fileName
+   If the file is long or contains a lot of text, we might want to use a pager such as less to view the contents in a more controlled way:
+       less fileName
+   using cat or less is suitable for viewing the contents of small to moderate-sized text files. If we're dealing with larger files, we might want to use other commands like head or tail to view just the beginning or the end of the file, respectively.
+
+2. To change the access permissions of files in a Linux terminal, we can use the chmod command. The chmod command allows us to modify the read, write, and execute permissions for the owner, group, and others on the file. Here's the basic syntax:
+       chmod permission fileName
+   The permissions parameter is typically represented using a three-digit octal number, where each digit represents the permissions for the owner, group, and others, respectively. The permission values are as follows:
+  4: Read (r)
+  2: Write (w)
+  1: Execute (x)
+  0: No permission
+     To change permissions for multiple categories (owner, group, others) simultaneously, you can use the following format:
+         chmod ugo permissions fileName
+here u represents the owner, g represents the group, and o represents others.
+    ex. : chmod u=rwx,g=rx,o=r fileName
