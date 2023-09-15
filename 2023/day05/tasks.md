@@ -34,6 +34,19 @@ You may need to use loops or commands (or both), based on your preference . [Che
  
  In case of Doubts, post it in [Discord Channel for #90DaysOfDevOps](https://discord.gg/hs3Pmc5F)
 
+  #!/bin/bash
+  source_dir="path_of_source_folder"
+  backup_dir="path_where_to_store"
+  # Create a timestamp for the backup filename
+  TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+  file_name="backup_$TIMESTAMP.tar.gz"
+  tar -czf "$backup_dir/$file_name" "$source_dir"
+  # Check if the backup was successful
+  if [ $? -eq 0 ]; then
+  echo "Backup completed successfully. Backup saved as: $BACKUP_FILENAME"
+  else
+  echo "Backup failed."
+  fi
 
  3) Read About Cron and Crontab, to automate the backup Script
  
